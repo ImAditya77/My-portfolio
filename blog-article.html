@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="en" x-data="site('blog')" x-init="init()" :class="{'dark':dark}" class="scroll-smooth">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Portfolio of Aditya Dixit showcasing Data Science, Machine Learning, AI Projects, Software Development, and Data Analytics expertise.">
+  <meta name="keywords" content="Aditya Dixit, Data Analyst, Software Developer, Data Science, Machine Learning, AI Projects, Python, SQL, Lucknow">
+  <meta name="author" content="Aditya Dixit">
+  <meta property="og:title" content="Aditya Dixit | Data Analyst & Software Developer">
+  <meta property="og:description" content="Data Science, Machine Learning, AI Projects, Software Development, and Data Analytics portfolio.">
+  <meta property="og:type" content="website"><title>Building Useful AI Beyond the Model | Aditya Dixit</title><script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { display: ['PT Sans', 'sans-serif'], body: ['DM Sans', 'sans-serif'] },
+          colors: { accent: '#FF6B2B', 'accent-light': '#FF8F5C' },
+          boxShadow: { glow: '0 24px 80px rgba(255,107,43,.18)' }
+        }
+      }
+    }
+  </script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{font-family:'DM Sans',sans-serif}
+    h1,h2,h3,h4,h5,h6{font-family:'PT Sans',sans-serif}
+    body{transition:background-color .3s,color .3s}
+    body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.35;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E")}
+    ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:#FF6B2B;border-radius:99px}
+    .reveal{opacity:0;transform:translateY(26px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}
+    .reveal.in,.reveal.visible{opacity:1;transform:none}.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+    .nl,.nav-link{position:relative}.nl::after,.nav-link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1.5px;background:currentColor;transition:width .22s cubic-bezier(.4,0,.2,1)}.nl:hover::after,.nl.on::after,.nav-link:hover::after{width:100%}.nl.on{font-weight:500}
+    .shimmer,.btn-primary{position:relative;overflow:hidden}.shimmer::after,.btn-primary::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:rgba(255,255,255,.18);transform:skewX(-20deg);transition:left .4s cubic-bezier(.4,0,.2,1)}.shimmer:hover::after,.btn-primary:hover::after{left:160%}
+    .card-h,.project-card{transition:transform .28s cubic-bezier(.4,0,.2,1),border-color .18s,box-shadow .18s}.card-h:hover,.project-card:hover{transform:translateY(-4px)}
+    .pf,.photo-frame{overflow:hidden;background:#d4d4d8}.pf img,.photo-frame img{width:100%;height:100%;object-fit:cover;display:block}
+    .skill-card{background:linear-gradient(180deg,rgba(255,255,255,.92),rgba(250,250,250,.82))}.dark .skill-card{background:linear-gradient(180deg,rgba(39,39,42,.9),rgba(24,24,27,.74))}
+    .project-visual{background:radial-gradient(circle at 25% 20%,rgba(255,107,43,.35),transparent 28%),linear-gradient(135deg,#18181b,#3f3f46 46%,#0a0a0a)}
+    [x-cloak]{display:none!important}
+  </style></head>
+<body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 antialiased"><header class="fixed inset-x-0 top-0 z-50 transition-all duration-300" :class="sc?'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5':''">
+    <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="Main navigation">
+      <a href="index.html#hero" class="font-display font-bold text-xl tracking-tight relative z-10"><span class="text-zinc-900 dark:text-white">aditya</span><span class="text-accent">.dev</span></a>
+      <ul class="hidden md:flex items-center gap-7 text-sm" role="list"><li><a href="index.html#about" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='about'?'on !text-zinc-900 dark:!text-white':''">About</a></li><li><a href="index.html#skills" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='skills'?'on !text-zinc-900 dark:!text-white':''">Skills</a></li><li><a href="index.html#projects" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='projects'?'on !text-zinc-900 dark:!text-white':''">Projects</a></li><li><a href="index.html#journey" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='journey'?'on !text-zinc-900 dark:!text-white':''">Journey</a></li><li><a href="index.html#education" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='education'?'on !text-zinc-900 dark:!text-white':''">Education</a></li><li><a href="index.html#contact" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='contact'?'on !text-zinc-900 dark:!text-white':''">Contact</a></li></ul>
+      <div class="flex items-center gap-3">
+        <button @click="toggleDark()" class="w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors" :aria-label="dark?'Switch to light mode':'Switch to dark mode'"><i :data-lucide="dark?'sun':'moon'" class="w-4 h-4"></i></button>
+        <a href="index.html#contact" class="hidden md:inline-flex items-center gap-2 shimmer bg-zinc-900 dark:bg-white text-white dark:text-zinc-950 text-sm font-medium px-5 py-2 rounded-full hover:bg-accent dark:hover:bg-accent dark:hover:text-white transition-colors"><i data-lucide="send" class="w-4 h-4"></i>Contact</a>
+        <button @click="mm=!mm" class="md:hidden w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800" aria-label="Toggle menu"><i :data-lucide="mm?'x':'menu'" class="w-4 h-4"></i></button>
+      </div>
+    </nav>
+    <div x-show="mm" x-cloak x-transition class="md:hidden bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
+      <ul class="flex flex-col px-6 py-4 gap-4 text-sm font-medium"><li><a href="index.html#about" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">About</a></li><li><a href="index.html#skills" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Skills</a></li><li><a href="index.html#projects" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Projects</a></li><li><a href="index.html#journey" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Journey</a></li><li><a href="index.html#education" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Education</a></li><li><a href="index.html#contact" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Contact</a></li><li><a href="projects.html" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">All Projects</a></li></ul>
+    </div>
+  </header><main>
+<article class="pt-36 pb-24"><div class="max-w-3xl mx-auto px-6"><a href="blog.html" class="reveal inline-flex items-center gap-2 text-sm text-accent mb-8"><i data-lucide="arrow-left" class="w-4 h-4"></i>Back to writing</a><p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Project thinking</p><h1 class="reveal d1 font-display font-bold text-5xl md:text-6xl leading-tight mb-6">Building useful AI beyond the model.</h1><p class="reveal d2 text-xl text-zinc-500 dark:text-zinc-400 leading-relaxed mb-12">A practical note from SARTHI, MedIntel, and KAVACH on turning machine learning and software ideas into complete systems.</p><div class="prose prose-zinc dark:prose-invert max-w-none text-zinc-600 dark:text-zinc-300 leading-relaxed"><p class="reveal">Strong AI projects are rarely only about model selection. SARTHI combines YOLOv8 pothole detection with GPS mapping, severity analysis, duplicate report filtering, dashboard analytics, and emergency SOS support. That system thinking is what makes a technical prototype closer to a real product.</p><p class="reveal d1">The same idea applies to MedIntel. Forecasting patient inflow or ICU occupancy becomes more valuable when the output is visible in dashboards, connected to KPIs, and paired with smart alerts for overload or inventory risk.</p><p class="reveal d2">As I continue learning Data Science and Software Development, my focus is to build projects that are clean, explainable, responsive, and useful to people who need quick decisions from complex information.</p></div></div></article>
+</main><footer class="py-10 border-t border-zinc-100 dark:border-zinc-900">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-sm text-zinc-500 dark:text-zinc-400">
+      <p><span class="font-medium text-zinc-900 dark:text-white">Aditya Dixit</span> &copy; 2026</p>
+      <p>Building intelligent software and data-driven solutions.</p>
+    </div>
+  </footer>
+  <button @click="top()" x-show="sc" x-cloak class="fixed bottom-6 right-6 z-50 w-11 h-11 rounded-full bg-accent text-white shadow-glow flex items-center justify-center" aria-label="Back to top"><i data-lucide="arrow-up" class="w-5 h-5"></i></button><script>
+    const profile = {
+      projects: [
+        {id:1,title:'SARTHI - AI-Powered Road Safety & Infrastructure Intelligence',slug:'sarthi',cat:'ai',label:'AI Vision',year:'2026',stack:['Python','YOLOv8','OpenCV','FastAPI','Supabase'],desc:'AI-powered road monitoring system using YOLOv8 for pothole detection, GPS-tagged mapping, severity analysis, FastAPI backend, Supabase integration, consensus engine, and emergency SOS support.',features:['Real-time pothole detection','GPS mapping','Duplicate report filtering','Dashboard analytics','SOS integration'],metric:'Computer Vision'},
+        {id:2,title:'MedIntel - AI-Based Hospital Resource Prediction System',slug:'medintel',cat:'data',label:'Data Science',year:'2026',stack:['Python','Pandas','Scikit-Learn','XGBoost','SQL','Power BI','Streamlit'],desc:'Predicts patient inflow, ICU occupancy, emergency resource demand, and healthcare KPIs using Machine Learning.',features:['Resource forecasting','Healthcare analytics','Interactive dashboards','Smart alert system'],metric:'Forecasting'},
+        {id:3,title:'KAVACH - Real-Time Emergency Response System',slug:'kavach',cat:'software',label:'App Platform',year:'2025',stack:['Flutter','Firebase','Firestore','Google Maps API'],desc:'Emergency response platform featuring SOS alerts, volunteer network, real-time location tracking, and emergency navigation.',features:['One-tap SOS','Live tracking','Volunteer assistance','Emergency categorization'],metric:'Real-time Systems'}
+      ],
+      skills: [
+        {title:'Programming Languages',icon:'code-2',items:['Python','Java','C','JavaScript']},
+        {title:'Web Development',icon:'globe-2',items:['HTML','CSS','Tailwind CSS','React.js','Firebase']},
+        {title:'Data Analytics',icon:'bar-chart-3',items:['SQL','Data Cleaning','Data Mining','Data Visualization','Statistical Analysis']},
+        {title:'AI & ML',icon:'brain-circuit',items:['Machine Learning','Deep Learning','YOLOv8','Computer Vision']},
+        {title:'Tools',icon:'wrench',items:['Git','GitHub','FastAPI','Supabase','Power BI','Streamlit']}
+      ],
+      journey: [
+        ['AI & Data Science Projects','Building practical AI, analytics, and forecasting systems from problem framing to dashboard output.'],
+        ['Hackathons','Exploring fast, team-based problem solving across software, data, and emergency-tech ideas.'],
+        ['Technical Workshops','Actively sharpening foundations in machine learning, system design, development tools, and analytics workflows.'],
+        ['Self-learning','Consistent learning in Python, SQL, AI, app development, cybersecurity, and business analytics.'],
+        ['Open-source Exploration','Reading real projects, improving Git/GitHub workflows, and learning production engineering habits.']
+      ],
+      education: [
+        ['B.Tech Computer Science Engineering','BBDITM, Lucknow','2023-2027'],
+        ['Intermediate','AYT Senior Secondary School','76.66%'],
+        ['High School','RBT Vidyalaya','90.2%']
+      ],
+      achievements: ['Participated in Hackathons','Built End-to-End AI Projects','Active Learner in Data Science','Strong Foundation in Software Engineering']
+    };
+    function site(active='hero'){
+      return {
+        dark: localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches,
+        sc:false, mm:false, s:active, filter:'all', typed:'', roleIndex:0, charIndex:0,
+        roles:['Data Analyst','Software Developer','Data Science Enthusiast'],
+        projects: profile.projects, skills: profile.skills, journey: profile.journey, education: profile.education, achievements: profile.achievements,
+        init(){
+          this.onScroll(); window.addEventListener('scroll',()=>this.onScroll(),{passive:true});
+          const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in','visible')}),{threshold:.12});
+          const bindReveals=()=>{
+            document.querySelectorAll('.reveal').forEach(el=>{
+              io.observe(el);
+              if(el.getBoundingClientRect().top < innerHeight * .96) el.classList.add('in','visible');
+            });
+            if(window.lucide) lucide.createIcons();
+          };
+          bindReveals(); setTimeout(bindReveals,80); setTimeout(bindReveals,260);
+          if(this.$watch) this.$watch('filter',()=>setTimeout(bindReveals,60));
+          this.typeLoop(); this.animateCounters();
+        },
+        typeLoop(){
+          const role=this.roles[this.roleIndex]; this.typed=role.slice(0,this.charIndex++);
+          if(this.charIndex<=role.length+8){ setTimeout(()=>this.typeLoop(), this.charIndex>role.length?90:58); }
+          else { this.charIndex=0; this.roleIndex=(this.roleIndex+1)%this.roles.length; setTimeout(()=>this.typeLoop(),450); }
+        },
+        animateCounters(){
+          const els=document.querySelectorAll('[data-count]');
+          const co=new IntersectionObserver(entries=>entries.forEach(entry=>{if(!entry.isIntersecting)return;const el=entry.target,target=Number(el.dataset.count),suffix=el.dataset.suffix||'';let n=0;const step=Math.max(1,Math.ceil(target/34));const tick=()=>{n=Math.min(target,n+step);el.textContent=n+suffix;if(n<target)requestAnimationFrame(tick)};tick();co.unobserve(el)}),{threshold:.55});
+          els.forEach(el=>co.observe(el));
+        },
+        onScroll(){
+          this.sc=scrollY>20;
+          const ids=['contact','achievements','education','journey','projects','skills','about','hero'];
+          for(const id of ids){const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<innerHeight*.38){this.s=id;break;}}
+        },
+        toggleDark(){this.dark=!this.dark;localStorage.setItem('theme',this.dark?'dark':'light');setTimeout(()=>window.lucide&&lucide.createIcons(),50)},
+        top(){window.scrollTo({top:0,behavior:'smooth'})},
+        filtered(){return this.filter==='all'?this.projects:this.projects.filter(p=>p.cat===this.filter)}
+      }
+    }
+  </script></body></html>
